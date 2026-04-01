@@ -64,7 +64,6 @@ public class BinaryTree<T> {
         q.add(root);
 
         Node current;
-        Node parent = null;
         Node nodeToRemove = null;
         Node parentOfRemove = null;
 
@@ -115,6 +114,21 @@ public class BinaryTree<T> {
 
     public int getSize() {
         return size;
+    }
+
+    public int getHeight() {
+        return getHeight(root);
+    }
+
+    private int getHeight(Node current) {
+        if (current == null) {
+            return 0;
+        }
+
+        int leftHeight = getHeight(current.leftChild);
+        int rightHeight = getHeight(current.rightChild);
+
+        return 1 + Math.max(leftHeight, rightHeight);
     }
 
     public void clear() {

@@ -21,5 +21,6 @@ public class TreeTest {
         System.out.println("Preorder: " + bt.preorder());
         System.out.println("Inorder: " + bt.inorder());
         System.out.println("Postorder: " + bt.postorder());
+        System.out.println("Height: " + bt.getHeight());
     }
 }
